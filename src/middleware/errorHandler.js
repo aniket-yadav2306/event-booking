@@ -1,14 +1,6 @@
 'use strict';
 
-/**
- * Global Express error handler.
- *
- * Expected error shape set by controllers:
- *   const err = new Error('Message');
- *   err.status = 404;   // optional HTTP status (defaults to 500)
- *   throw err;          // or next(err)
- */
-// eslint-disable-next-line no-unused-vars
+
 const errorHandler = (err, req, res, next) => {
   const status  = err.status  || 500;
   const message = err.message || 'Internal Server Error';

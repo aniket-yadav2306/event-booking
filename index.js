@@ -3,7 +3,7 @@ require('dotenv').config();
 const { initDB } = require('./src/config/db');
 
 (async () => {
-  await initDB(); // 👈 VERY IMPORTANT
+  await initDB(); // VERY IMPORTANT
 
   // start your server AFTER DB is ready
   const app = require('./src/app');

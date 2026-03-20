@@ -6,7 +6,7 @@ let pool;
 
 async function initDB() {
   try {
-    // 1️⃣ Connect WITHOUT database
+    //  Connect WITHOUT database
     const tempConnection = await mysql.createConnection({
       host: process.env.DB_HOST || 'localhost',
       port: Number(process.env.DB_PORT) || 3306,
@@ -16,7 +16,7 @@ async function initDB() {
 
     console.log("✅ Connected to MySQL");
 
-    // 2️⃣ Create DB if not exists
+    //  Create DB if not exists
     await tempConnection.query(
       `CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\``
     );
@@ -25,7 +25,7 @@ async function initDB() {
 
     await tempConnection.end();
 
-    // 3️⃣ Create pool WITH database
+    //  Create pool WITH database
     pool = mysql.createPool({
       host: process.env.DB_HOST || 'localhost',
       port: Number(process.env.DB_PORT) || 3306,
